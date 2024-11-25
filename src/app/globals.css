@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+/* FontAwesome import */
+
+/* Global Styles */
+
+* {
+  margin: 0;
+
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  line-height: inherit;
+  background: transparent;
+}
+
+body {
+  background: #151515;
+  font-family: 'poppins-medium', sans-serif;
+  font-size: 1.7rem;
+  line-height: 3rem;
+  color: #6e6e6e;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "poppins-semibold", sans-serif;
+  color: #313131;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  margin-bottom: 2.1rem;
+}
+
+h2 {
+  color: #4cb1d4;
+  font-size: 3rem;
+}
+
+table,
+th,
+td {
+  border: 1px solid #4cb1d4;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #081b29;
+}
+
+
+
+
+
+.button::after {
+  display: inline-block;
+  content: "\f107";
+  /* Unicode for Font Awesome icon */
+  font-family: "Font Awesome 5 Free";
+  /* Ensure the font is loaded */
+  font-size: 1.6rem;
+  line-height: inherit;
+  text-align: center;
+  position: relative;
+  left: 1.2rem;
+  font-weight: 900;
+  /* Needed for Font Awesome solid icons */
+}
+
+.menuToggle::before,
+.menuToggle::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #ff0077;
+  transition: 0.2s;
+}
+
+.menuToggle::before {
+  top: -8px;
+}
+
+.menuToggle::after {
+  top: 8px;
+}
+
+.menuToggle.isClicked::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.menuToggle.isClicked::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.menuToggle.isClicked {
+  background-color: transparent;
+}
+
+.timelinewrap::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: #000002;
+  position: absolute;
+  left: 38%;
+  top: 0;
+}
+
+.underlines a::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 50px;
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .timelinewrap::before {
+    left: 1.8rem;
+  }
+}
